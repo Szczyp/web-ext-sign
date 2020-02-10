@@ -32,6 +32,7 @@ jobs:
           apiKey: ${{ secrets.API_KEY }}
           apiSecret: ${{ secrets.API_SECRET }}
           sourceDir: "test/extension"
+          ignoreFiles: "*.nix"
 
       - name: "Upload xpi"
         uses: actions/upload-artifact@v1

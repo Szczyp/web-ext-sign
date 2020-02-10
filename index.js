@@ -8,7 +8,7 @@ const inputs = {
   apiKey: { required: true, secret: true },
   apiSecret: { required: true, secret: true },
   sourceDir: { default: '.' },
-  ignoreFiles: { default: [] },
+  ignoreFiles: { default: '' },
   channel: { default: 'unlisted' }
 };
 
@@ -26,8 +26,8 @@ function execOptions() {
     };
   const options = {
     listeners: {
-      stdout: append("out"),
-      stderr: append("err")
+      stdout: append('out'),
+      stderr: append('err')
     }
   };
   return [std, options];
@@ -44,17 +44,17 @@ async function run() {
         return [key, value];
       }));
 
-  core.startGroup("Installing web-ext");
+  core.startGroup('Installing web-ext');
   await exec.exec('npm', ['install', '--global', 'web-ext']);
   core.endGroup();
 
-  core.startGroup("Running web-ext sign");
+  core.startGroup('Running web-ext sign');
   let [std, options] = execOptions();
 
   await exec.exec('web-ext', [
     'sign',
     `--source-dir=${params.sourceDir}`,
-    `--ignore-files=${params.ignoreFiles.join(' ')}`,
+    `--ignore-files=${params.ignoreFiles}`,
     `--channel=${params.channel}`,
     `--api-key=${params.apiKey}`,
     `--api-secret=${params.apiSecret}`

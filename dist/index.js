@@ -151,7 +151,7 @@ const inputs = {
   apiKey: { required: true, secret: true },
   apiSecret: { required: true, secret: true },
   sourceDir: { default: '.' },
-  ignoreFiles: { default: [] },
+  ignoreFiles: { default: '' },
   channel: { default: 'unlisted' }
 };
 
@@ -169,8 +169,8 @@ function execOptions() {
     };
   const options = {
     listeners: {
-      stdout: append("out"),
-      stderr: append("err")
+      stdout: append('out'),
+      stderr: append('err')
     }
   };
   return [std, options];
@@ -187,17 +187,17 @@ async function run() {
         return [key, value];
       }));
 
-  _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup("Installing web-ext");
+  _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup('Installing web-ext');
   await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('npm', ['install', '--global', 'web-ext']);
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.endGroup();
 
-  _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup("Running web-ext sign");
+  _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup('Running web-ext sign');
   let [std, options] = execOptions();
 
   await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('web-ext', [
     'sign',
     `--source-dir=${params.sourceDir}`,
-    `--ignore-files=${params.ignoreFiles.join(' ')}`,
+    `--ignore-files=${params.ignoreFiles}`,
     `--channel=${params.channel}`,
     `--api-key=${params.apiKey}`,
     `--api-secret=${params.apiSecret}`

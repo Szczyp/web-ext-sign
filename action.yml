@@ -10,15 +10,15 @@ inputs:
   sourceDir:
     description: 'Path to addon source'
     required: false
-    default: '.'
+    default: "."
   ignoreFiles:
     description: 'List of ignored paths'
     required: false
-    default: ''
+    default: ""
   channel:
     description: 'Mozilla release channel'
     required: false
-    default: 'unlisted'
+    default: "unlisted"
 outputs:
   name:
     description: 'Filename of a signed xpi'

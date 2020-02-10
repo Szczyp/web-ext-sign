@@ -11,9 +11,9 @@ This action allows you to sign an add-on using [mozilla/web-ext](https://github.
 
 * apiKey: Mozilla API key used for signing. Required.
 * apiSecret: Mozilla API secret used for signing. Required.
-* sourceDir: Path to an addon source. Defaults to `'.'`.
-* ignoreFiles: List of ignored paths. Defaults to `[]`.
-* channel: Mozilla release channel. Defaults to `'unlisted'`.
+* sourceDir: Path to an addon source. Defaults to `"."`.
+* ignoreFiles: List of ignored paths. Defaults to `""`.
+* channel: Mozilla release channel. Defaults to `"unlisted"`.
 
 ## Outputs ##
 * name: Filename of a signed xpi.
@@ -48,6 +48,9 @@ jobs:
         with:
           apiKey: ${{ secrets.API_KEY }}
           apiSecret: ${{ secrets.API_SECRET }}
+          sourceDir: "src"
+          ignoreFiles: "*.nix test.json"
+          channel: "unlisted"
 
       - name: "Create Release"
         uses: softprops/action-gh-release@v1
