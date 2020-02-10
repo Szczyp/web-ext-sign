@@ -4,11 +4,6 @@
   "name": "Borderify: Test for web-ext-sign",
   "version": "1.0",
   "homepage_url": "https://github.com/Szczyp/web-ext-sign",
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "test-web-ext-sign@szczyp.com"
-    }
-  },
   "content_scripts": [
     {
       "matches": [
