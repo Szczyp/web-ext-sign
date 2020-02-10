@@ -188,7 +188,7 @@ async function run() {
       }));
 
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup("Installing web-ext");
-  _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('npm', ['install', '--global', 'web-ext']);
+  await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('npm', ['install', '--global', 'web-ext']);
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.endGroup();
 
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup("Running web-ext sign");
