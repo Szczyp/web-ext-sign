@@ -45,7 +45,7 @@ async function run() {
       }));
 
   core.startGroup("Installing web-ext");
-  exec.exec('npm', ['install', '--global', 'web-ext']);
+  await exec.exec('npm', ['install', '--global', 'web-ext']);
   core.endGroup();
 
   core.startGroup("Running web-ext sign");
