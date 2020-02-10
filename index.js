@@ -61,9 +61,10 @@ async function run() {
   ], options);
 
   const match = std.out.match(/^(?<xpi>.*web-ext-artifacts.*)$/m);
+  const xpi = match.groups.xpi.trim();
   Object.entries(outputs)
     .forEach(([k, f]) =>
-      core.setOutput(k, f(match.groups.xpi)));
+      core.setOutput(k, f(xpi)));
   core.endGroup();
 }
 

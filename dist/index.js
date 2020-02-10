@@ -204,9 +204,10 @@ async function run() {
   ], options);
 
   const match = std.out.match(/^(?<xpi>.*web-ext-artifacts.*)$/m);
+  const xpi = match.groups.xpi.trim();
   Object.entries(outputs)
     .forEach(([k, f]) =>
-      _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(k, f(match.groups.xpi)));
+      _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(k, f(xpi)));
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.endGroup();
 }
 
