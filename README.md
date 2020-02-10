@@ -4,6 +4,9 @@
 
 This action allows you to sign an add-on using [mozilla/web-ext](https://github.com/mozilla/web-ext).
 
+## Required steps ##
+* actions/setup-node
+
 ## Inputs ##
 
 * apiKey: Mozilla API key used for signing. Required.
@@ -33,6 +36,11 @@ jobs:
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
 
       - name: "web-ext-sign"
         id: web-ext-sign
