@@ -1,0 +1,31 @@
+{
+  "name": "web-ext-sign",
+  "version": "1.0.0",
+  "description": "Sign you addons",
+  "main": "index.js",
+  "scripts": {
+    "package": "ncc build index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Szczyp/web-ext-sign.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/actions/javascript-action/issues"
+  },
+  "homepage": "https://github.com/actions/javascript-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.3"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5"
+  }
+}

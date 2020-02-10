@@ -1,0 +1,31 @@
+name: 'WebExtSign'
+description: 'Sign an addon using WebExt'
+inputs:
+  apiKey:
+    description: 'Mozilla API key used for signing'
+    required: true
+  apiSecret:
+    description: 'Mozilla API secret used for signing'
+    required: true
+  sourceDir:
+    description: 'Path to addon source'
+    required: false
+    default: '.'
+  ignoreFiles:
+    description: 'List of ignored paths'
+    required: false
+    default: []
+  channel:
+    description: 'Mozilla release channel'
+    required: false
+    default: 'unlisted'
+outputs:
+  name:
+    description: 'Filename of a signed xpi'
+  path:
+    description: 'Directory of a signed xpi'
+  target:
+    description: 'Path to a signed xpi'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

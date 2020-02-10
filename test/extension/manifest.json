@@ -1,0 +1,22 @@
+{
+  "description": "Adds a solid red border to all webpages matching mozilla.org. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#borderify",
+  "manifest_version": 2,
+  "name": "Borderify: Test for web-ext-sign",
+  "version": "1.0",
+  "homepage_url": "https://github.com/Szczyp/web-ext-sign",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "test-web-ext-sign@szczyp.com"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.mozilla.org/*"
+      ],
+      "js": [
+        "borderify.js"
+      ]
+    }
+  ]
+}
