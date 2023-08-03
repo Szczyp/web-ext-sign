@@ -1,30 +1,58 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
-  '@actions/core': 1.2.2
-  '@actions/exec': 1.0.3
+  '@actions/core':
+    specifier: ^1.9.1
+    version: 1.9.1
+  '@actions/exec':
+    specifier: ^1.0.3
+    version: 1.0.3
+
 devDependencies:
-  '@zeit/ncc': 0.20.5
-lockfileVersion: 5.1
+  '@zeit/ncc':
+    specifier: ^0.20.5
+    version: 0.20.5
+
 packages:
-  /@actions/core/1.2.2:
+
+  /@actions/core@1.9.1:
+    resolution: {integrity: sha512-5ad+U2YGrmmiw6du20AQW5XuWo7UKN2052FjSV7MX+Wfjf8sCqcsZe62NfgHys4QI4/Y+vQvLKYL8jWtA1ZBTA==}
+    dependencies:
+      '@actions/http-client': 2.1.0
+      uuid: 8.3.2
     dev: false
-    resolution:
-      integrity: sha512-IbCx7oefq+Gi6FWbSs2Fnw8VkEI6Y4gvjrYprY3RV//ksq/KPMlClOerJ4jRosyal6zkUIc8R9fS/cpRMlGClg==
-  /@actions/exec/1.0.3:
+
+  /@actions/exec@1.0.3:
+    resolution: {integrity: sha512-TogJGnueOmM7ntCi0ASTUj4LapRRtDfj57Ja4IhPmg2fls28uVOPbAn8N+JifaOumN2UG3oEO/Ixek2A4NcYSA==}
     dependencies:
       '@actions/io': 1.0.2
     dev: false
-    resolution:
-      integrity: sha512-TogJGnueOmM7ntCi0ASTUj4LapRRtDfj57Ja4IhPmg2fls28uVOPbAn8N+JifaOumN2UG3oEO/Ixek2A4NcYSA==
-  /@actions/io/1.0.2:
+
+  /@actions/http-client@2.1.0:
+    resolution: {integrity: sha512-BonhODnXr3amchh4qkmjPMUO8mFi/zLaaCeCAJZqch8iQqyDnVIkySjB38VHAC8IJ+bnlgfOqlhpyCUZHlQsqw==}
+    dependencies:
+      tunnel: 0.0.6
     dev: false
-    resolution:
-      integrity: sha512-J8KuFqVPr3p6U8W93DOXlXW6zFvrQAJANdS+vw0YhusLIq+bszW8zmK2Fh1C2kDPX8FMvwIl1OUcFgvJoXLbAg==
-  /@zeit/ncc/0.20.5:
-    dev: true
+
+  /@actions/io@1.0.2:
+    resolution: {integrity: sha512-J8KuFqVPr3p6U8W93DOXlXW6zFvrQAJANdS+vw0YhusLIq+bszW8zmK2Fh1C2kDPX8FMvwIl1OUcFgvJoXLbAg==}
+    dev: false
+
+  /@zeit/ncc@0.20.5:
+    resolution: {integrity: sha512-XU6uzwvv95DqxciQx+aOLhbyBx/13ky+RK1y88Age9Du3BlA4mMPCy13BGjayOrrumOzlq1XV3SD/BWiZENXlw==}
     hasBin: true
-    resolution:
-      integrity: sha512-XU6uzwvv95DqxciQx+aOLhbyBx/13ky+RK1y88Age9Du3BlA4mMPCy13BGjayOrrumOzlq1XV3SD/BWiZENXlw==
-specifiers:
-  '@actions/core': ^1.1.1
-  '@actions/exec': ^1.0.3
-  '@zeit/ncc': ^0.20.5
+    dev: true
+
+  /tunnel@0.0.6:
+    resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
+    engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
+    dev: false
+
+  /uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: false
